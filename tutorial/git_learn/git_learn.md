@@ -17,7 +17,9 @@
 
 ``` shell
 $ git init
-
+# 创建新文件
+$ git add .
+$ git commit -m "init files"
 ```
 
 ##### git远程仓库 - github
@@ -30,3 +32,13 @@ $ git init
 > ssh-keygen -t rsa -C "youremail@example.com"
 # 一直enter就好
 ```
+
+
+``` shell
+$ git remote add origin git@github.com:laixxiong/my-tutorials.git
+$ git push -u origin master
+# 后面推送就不用加 -u了
+```
+
+##### 参考
+[廖雪峰的git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
