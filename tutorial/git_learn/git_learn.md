@@ -37,7 +37,7 @@ $ git commit -m "init files"
 ``` shell
 $ git remote add origin git@github.com:laixxiong/my-tutorials.git
 $ git push -u origin master
-# 后面推送就不用加 -u了
+# 后面推送就不用加 -u了........
 ```
 
 ##### 参考
