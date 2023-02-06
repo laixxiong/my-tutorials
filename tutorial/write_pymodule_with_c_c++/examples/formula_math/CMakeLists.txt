@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 2.8)
+
+project(formula_math)
+
+if(WIN32)
+	set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} /MTd")
+	set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} /MT")
+	include_directories(${PYTHON_DIR}/include)
+	link_directories(${PYTHON_DIR}/libs)
+	set(PYTHON_LIB python27 CACHE INTERNAL "python lib")
+else()
+execute_process(COMMAND bash -c "python-config --cflags" OUTPUT_VARIABLE py_cflags)
+execute_process(COMMAND bash -c "python-config --ldflags" OUTPUT_VARIABLE py_ldflags)
+endif()
+
+add_library(formula_math MODULE src/formula_math.cpp)
+if(WIN32)
+set_target_properties(formula_math PROPERTIES SUFFIX ".pyd")
+else()
+set_target_properties(formula_math PROPERTIES COMPILE_FLAGS ${py_cflags})
+endif()
+#set_target_properties(formula_math PROPERTIES LINK_FLAGS "-shared" ${py_ldflags})
