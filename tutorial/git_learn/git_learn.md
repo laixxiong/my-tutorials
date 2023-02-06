@@ -40,5 +40,7 @@ $ git push -u origin master
 # 后面推送就不用加 -u了........
 ```
 
+nihao
+
 ##### 参考
 [廖雪峰的git教程](https://www.liaoxuefeng.com/wiki/896043488029600)
